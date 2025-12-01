@@ -60,16 +60,58 @@
 // });
 
 // Basic Routine in express.js
-const express = require("express");
-const app = express();
-const PORT = 3000;
+// const express = require("express");
+// const app = express();
+// const PORT = 3000;
 
-app.get("/about", (req, res) => {
-  res.send("about page");
-});
-app.get("/contact", (req, res) => {
-  res.send("about page");
-});
-app.listen(PORT, () => {
-  res.send(`server running on http://localhost:${PORT}`);
-});
+// app.get("/about", (req, res) => {
+//   res.send("about page");
+// });
+// app.get("/contact", (req, res) => {
+//   res.send("about page");
+// });
+// app.listen(PORT, () => {
+//   res.send(`server running on http://localhost:${PORT}`);
+// });
+// const express = require("express");
+// const app = express();
+
+// app.use(express.json()); // Body parser
+
+// // GET
+// app.get("/hello", (req, res) => {
+//   res.send("This is GET Route");
+// });
+
+// // POST
+// app.post("/login", (req, res) => {
+//   res.send(req.body);
+// });
+
+// // Query
+// app.get("/search", (req, res) => {
+//   res.send(req.query);
+// });
+
+// // Params
+// app.get("/user/:id", (req, res) => {
+//   res.send(req.params);
+// });
+
+// // Middleware
+// app.use((req, res, next) => {
+//   console.log("Middleware working...");
+//   next();
+// });
+
+// // JSON API
+// app.get("/products", (req, res) => {
+//   res.json([
+//     { id: 1, name: "Laptop" },
+//     { id: 2, name: "Keyboard" },
+//   ]);
+// });
+
+// app.listen(5000, () => {
+//   console.log("Server running on port 5000");
+// });

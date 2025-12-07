@@ -189,17 +189,17 @@
 //   console.log("Server running on port 3000");
 // });
 
-const express = require("express");
-const app = express();
-const port = 5000;
+// const express = require("express");
+// const app = express();
+// const port = 5000;
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get("/users/:id", (req, res) => {
-  const userId = req.params.id;
-  res.send(`User ID is: ${userId}`);
-});
+// app.get("/users/:id", (req, res) => {
+//   const userId = req.params.id;
+//   res.send(`User ID is: ${userId}`);
+// });
 
-app.listen(port, () => {
-  console.log("server running on http://localhost:5000");
-});
+// app.listen(port, () => {
+//   console.log("server running on http://localhost:5000");
+// });

@@ -1,38 +1,38 @@
-// const express = require("express");
-// const app = express();
-// const port = 5000;
-
-// // to read form data
-
-// app.use(express.urlencoded({ extended: true }));
-
-// // post route
-// app.post("/contact", (req, res) => {
-//   const { name, email } = req.body;
-//   res.send(`Received: Name = ${name}, Email = ${email}`);
-// });
-
-// // Start server
-// app.listen(port, () => {
-//   console.log(`Server running at http://localhost:${port}`);
-// });
-
-// GET Request with Query Params and URL Params
 const express = require("express");
 const app = express();
 const port = 5000;
 
-// Simple GET
-app.get("/info", (req, res) => {
-  res.send("Server is running.");
+// to read form data
+
+app.use(express.urlencoded({ extended: true }));
+
+// post route
+app.post("/contact", (req, res) => {
+  const { name, email } = req.body;
+  res.send(`Received: Name = ${name}, Email = ${email}`);
 });
 
-// GET with Query Params
-app.get("/user", (req, res) => {
-  const { name, age } = req.query;
-
-  res.send(`Query Received\nName: ${name}\nAge: ${age}`);
+// Start server
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
+
+// GET Request with Query Params and URL Params
+// const express = require("express");
+// const app = express();
+// const port = 5000;
+
+// // Simple GET
+// app.get("/info", (req, res) => {
+//   res.send("Server is running.");
+// });
+
+// // GET with Query Params
+// app.get("/user", (req, res) => {
+//   const { name, age } = req.query;
+
+//   res.send(`Query Received\nName: ${name}\nAge: ${age}`);
+// });
 
 // // GET with URL Params
 // app.get("/product/:id", (req, res) => {

@@ -123,18 +123,18 @@
 
 // Creating a Basic Express Server
 
-const express = require("express");
-require("dotenv").config();
+// const express = require("express");
+// require("dotenv").config();
 
-const app = express();
+// const app = express();
 
-app.get("/", (req, res) => {
-  res.send("Hello from Express!");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello from Express!");
+// });
 
-app.listen(process.env.PORT || 5000, () => {
-  console.log("Server running...");
-});
+// app.listen(process.env.PORT || 5000, () => {
+//   console.log("Server running...");
+// });
 
 // Basic Routing in Express.js
 // const express = require("express");
@@ -188,3 +188,18 @@ app.listen(process.env.PORT || 5000, () => {
 // app.listen(3000, () => {
 //   console.log("Server running on port 3000");
 // });
+
+const express = require("express");
+const app = express();
+const port = 5000;
+
+app.use(express.json());
+
+app.get("/users/:id", (req, res) => {
+  const userId = req.params.id;
+  res.send(`User ID is: ${userId}`);
+});
+
+app.listen(port, () => {
+  console.log("server running on http://localhost:5000");
+});

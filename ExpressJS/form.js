@@ -62,7 +62,7 @@ app.listen(5000, () => {
 
 //Middleware in ExpressJS
 //middleware =a function that runs between request and response
-//used for:logging,authentication,validation,parsing,error,etc.
+//used for:logging,authentication,validation,passing,error,etc.
 
 //Types of Middleware
 //1.Application Level middleware

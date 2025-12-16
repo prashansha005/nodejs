@@ -249,23 +249,37 @@
 
 // TASK
 
-function checkNumber(num) {
-  if (num < 0) {
-    throw "number must be positive";
-  }
-  return num;
-}
+// function checkNumber(num) {
+//   if (num < 0) {
+//     throw "number must be positive";
+//   }
+//   return num;
+// }
 
-function getData(num) {
-  try {
-    let result = checkNumber(num);
-    console.log("Valid number:", result);
-  } catch (error) {
-    console.log("error caught:", error);
-  } finally {
-    console.log("check finished.");
-  }
-}
+// function getData(num) {
+//   try {
+//     let result = checkNumber(num);
+//     console.log("Valid number:", result);
+//   } catch (error) {
+//     console.log("error caught:", error);
+//   } finally {
+//     console.log("check finished.");
+//   }
+// }
 
-getData(5);
-getData(-3);
+// getData(5);
+// getData(-3);
+
+let a = 10;
+const b = 20;
+// var c = 30;
+
+function test() {
+  let a = 100;
+  const b = 200;
+  // var c = 300;
+}
+test();
+console.log(a);
+console.log(b);
+// console.log(c);

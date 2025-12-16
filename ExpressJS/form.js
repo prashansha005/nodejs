@@ -46,19 +46,19 @@
 //   console.log(`Server running at http://localhost:${port}`);
 // });
 
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get("/users/:id", (req, res) => {
-  const userId = req.params.id;
-  res.send(`User ID is: ${userId}`);
-});
+// app.get("/users/:id", (req, res) => {
+//   const userId = req.params.id;
+//   res.send(`User ID is: ${userId}`);
+// });
 
-app.listen(5000, () => {
-  console.log("server running on http://localhost:5000");
-});
+// app.listen(5000, () => {
+//   console.log("server running on http://localhost:5000");
+// });
 
 //Middleware in ExpressJS
 //middleware =a function that runs between request and response
@@ -69,3 +69,32 @@ app.listen(5000, () => {
 //2.custom middleware
 //3.Routr-level & App-level Middleware
 //4.Error-hamdling middleware
+
+// const express = require("express");
+// const app = express();
+
+// app.use((req, res, next) => {
+//   console.log("Middleware works!");
+//   next();
+// });
+// app.get("/", (req, res) => {
+//   res.send("Hello from express!");
+// });
+// app.listen(5000, () => {
+//   console.log("server started at https://localhost:5000");
+// });
+
+const express = require("express");
+const app = express();
+
+function myMiddleware(req, res, next) {
+  console.log("this is my custom middleware");
+  next();
+}
+app.use(myMiddleware);
+app.get("/", (req, res) => {
+  res.send("Home page");
+});
+app.listen(5000, () => {
+  console.log("server started at https://localhost:5000");
+});

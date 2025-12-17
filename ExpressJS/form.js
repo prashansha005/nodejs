@@ -84,17 +84,58 @@
 //   console.log("server started at https://localhost:5000");
 // });
 
+// const express = require("express");
+// const app = express();
+
+// function myMiddleware(req, res, next) {
+//   console.log("this is my custom middleware");
+//   next();
+// }
+// app.use(myMiddleware);
+// app.get("/", (req, res) => {
+//   res.send("Home page");
+// });
+// app.listen(5000, () => {
+//   console.log("server started at http://localhost:5000");
+// });
+
+// example of error handeling middleware
+
+// const express = require("express");
+// const app = express();
+
+// app.get("/", (req, res, next) => {
+//   // const error = new Error("something went wrong");
+//   next("something went wrong");
+// });
+
+// app.use((err, req, res, next) => {
+//   console.log("Error:", err.message);
+//   res.send("Error occured");
+// });
+
+// app.listen(3000, () => {
+//   console.log("server started at http://localhost:3000");
+// });
+
+// Async/Await Middleware
+
+// Async/Await middleware is used to wait for a task to finish before moving to the next step.
+
+// Examples of Async/Await middleware
+
 const express = require("express");
 const app = express();
 
-function myMiddleware(req, res, next) {
-  console.log("this is my custom middleware");
+app.use(async (req, res, next) => {
+  console.log("middleware started");
+
+  await console.log("waiting task done");
   next();
-}
-app.use(myMiddleware);
+});
 app.get("/", (req, res) => {
-  res.send("Home page");
+  res.send("hello bca student");
 });
 app.listen(5000, () => {
-  console.log("server started at https://localhost:5000");
+  console.log("middleware started");
 });

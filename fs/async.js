@@ -24,7 +24,7 @@ const path = require("path");
 // const fileName="crud.txt";
 // const filePath=path.join(__dirname,fileName);
 // console.log(filePath);
-// fs.appendFile(filePath,"nice broo","utf-8",
+// fs.appendFile(filePath,"whatsupppp","utf-8",
 //     (err)=>{
 //         if(err) console.error(err);
 //         else console.log("saved the file");

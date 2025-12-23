@@ -1,59 +1,64 @@
-//fs.promises.writeFile().catch() //create/write
+// fs module:
+// Synchrouns , Asynchronous (callback,promises,async await)
 
+// fs.writeFileSync(filePath,data,optional) - write(sync)
+
+// write(async-callback) :
+// fs.writeFile(filePath,data,optional,callback)
+// eg:
+// fs.writeFile(filePath,"hello","utf-8",
+//     (err) => console.error(err)
+//     else console.log ("file created succesfully");
+// )
+
+// write(async-promises):
+// fs.writeFile(filePath,data,optional).then().catch()
+// eg:
+// fs.promises.writeFile(filePath,"hello","utf-8").then((data)=> console.log(data)).catch ((error)=> console.error(error))
+
+// fs.promises.writeFile(filepath,data,optional) - aync fs (async await)
 const fs = require("fs");
 const path = require("path");
+const fileName = "await.txt";
+const filePath = path.join(__dirname, fileName);
 
-// const fileName = "promise.txt";
-// const filePath = path.join(__dirname, fileName);
+// const writeFileExample = async () => {
+//     try{
+//     await fs.promises.writeFile(filePath,"helllo wassuppp", "utf-8")
+//     console.log("file created succesffully");
+//     } catch (error){
+//         console.log(error);
+//     }
+// }
+//writeFileExample();
 
-// fs.promises
-//   .writeFile(filePath, "hellooooo", "utf-8")
-//   .then((data) => {
+// const readFileExample = async () => {
+//     try{
+//     const data = await  fs.promises.readFile(filePath, "utf-8")
 //     console.log(data);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-
-// fs.promises
-//   .readFile(filePath, "utf-8")
-//   .then((data) => {
-//     {
-//       console.log(data);
+//     } catch (error){
+//         console.log(error);
 //     }
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+// }
 
-// fs.promises
-//   .appendFile(filePath, "how are you?", "utf-8")
-//   .then((data) => {
-//     {
-//       console.log(data);
+// readFileExample();
+
+// const appendFile = async () => {
+//     try{
+//         await fs.promises.appendFile(filePath, "helloooooooo", "utf-8")
+//         console.log("file created sucessfully");
+//     }catch (error){
+//         console.log(error)
 //     }
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+// }
+// appendFile();
 
-// fs.promises
-//   .unlink(filePath, "utf-8")
-//   .then((data) => {
-//     {
-//       console.log(data);
-//     }
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
-// const path1 = __dirname;
-
-fs.readdir(path1)
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
+const unlinkFile = async () => {
+  try {
+    await fs.promises.unlink(filePath);
+    console.log("file has been deleted ");
+  } catch (error) {
     console.log(error);
-  });
+  }
+};
+unlinkFile();
